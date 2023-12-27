@@ -1,0 +1,520 @@
+pattern:
+
+n = int(input("Enter number of rows: "))
+
+for i in range(1,n+1):
+    for j in range(1, i+1):
+        print(j, end="")
+    print()
+
+climbdstairs:
+
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+ def countWays(s):
+    return fib(s + 1)
+ s = 5
+print( "Number of ways = ", countWays(s))
+
+happy number:
+
+def isHappyNumber(num):    
+    rem = sum = 0;  
+    while(num > 0):    
+        rem = num%10;    
+        sum = sum + (rem*rem);    
+        num = num//10;    
+    return sum;    
+        
+num = 82;    
+result = num;    
+     
+while(result != 1 and result != 4):    
+    result = isHappyNumber(result); 
+if(result == 1):    
+    print(str(num) + " is a happy number");      
+elif(result == 4):    
+    print(str(num) + " is not a happy number");
+
+non prime number between a and b:
+
+a = int(input())
+b = int(input())
+for x in range (a, b+1):
+    if x > 1:
+        for i in range (2, x):
+            if (x%i)== 0:
+                break
+        else:
+            print (x)
+perfect num:
+Number = int(input(" Please Enter any Number: "))
+Sum = 0
+for i in range(1, Number):
+    if(Number % i == 0):
+        Sum = Sum + i
+if (Sum == Number):
+    print(" %d is a Perfect Number" %Number)
+else:
+    print(" %d is not a Perfect Number" %Number)
+
+armstrong:
+
+num=int(input("Enter the number:"))
+Sum=0
+temp=num
+while temp>0:
+    digit=temp%10
+    Sum+=digit**3
+    temp=temp//10
+if Sum==num:
+    print("Armstrong Number")
+else:
+    print("Not a Armstrong Number")
+
+harshad num:
+
+num=int(input("Enter the number:"))
+Sum=0
+temp=num
+while temp>0:
+    digit=temp%10
+    Sum+=digit
+    temp=temp//10
+if num%Sum==0:
+    print("Harshad Number")
+else:
+    print("Not a Harshad Number")
+
+tech no or not:
+
+n = 3025
+m = str(n)
+a = m[:len(m)//2]
+b = m[len(m)//2:]
+c = int(a)+int(b)
+d = c**2
+
+if(d==n):
+    print("Tech number")
+else:
+    print("Not a Tech number")
+
+decimal to binary:
+
+# Python program to convert decimal into other number systems
+dec = 344
+
+print("The decimal value of", dec, "is:")
+print(bin(dec), "in binary.")
+print(oct(dec), "in octal.")
+print(hex(dec), "in hexadecimal.")
+
+matrix multiplication:
+
+X=[[1,2],
+   [5,3]]
+Y=[[2,3],
+   [4,1]]
+result=[[0,0],
+        [0,0]]
+
+for i in range(len(X)):
+   for j in range(len(Y[0])):
+       for k in range(len(Y)):
+           result[i][j] += X[i][k] * Y[k][j]
+for r in result:
+   print(r)
+
+matrix addition:
+a=[[1,2],
+   [5,3]]
+b=[[2,3],
+   [4,1]]
+c=[[0,0],
+   [0,0]]
+for i in range(len(a)):
+    for j in range(len(b)):
+        c[i][j]=a[i][j]+b[i][j]
+for i in c:
+    print(i)
+
+lcm and gcd:
+
+n1 = int(input("Enter First number :"))
+n2 = int(input("Enter Second number :"))
+x = n1
+y = n2
+while(n2!=0):
+    t = n2
+    n2 = n1 % n2
+    n1 = t
+gcd = n1
+print("GCD of {0} and {1} = {2}".format(x,y,gcd))
+lcm = (x*y)/gcd
+print("LCM of {0} and {1} = {2}".format(x,y,lcm))
+
+ Fibonacci series:
+
+def Fibonacci(n):
+if n < 0:
+        print("Incorrect input")
+    elif n == 0:
+        return 0
+    elif n == 1 or n == 2:
+        return 1
+    else:
+        return Fibonacci(n-1) + Fibonacci(n-2)
+# Driver Program
+num=int(input("Enter the number of terms="))
+for i in range(num):
+    print(Fibonacci(i))
+
+Calendar Programs:
+
+# Current time
+from datetime import datetime
+now=datetime.now()
+print(now)
+
+# Current date
+from datetime import datetime
+now=datetime.today()
+print(now)
+
+# Entire month in a year
+import calendar
+y = int(input("Enter the Year :"))
+print(calendar.prcal(y))
+
+# Particular month in a year
+import calendar
+y = int(input("Enter the Year :"))
+m=int(input("Enter the month :"))
+print(calendar.month(y,m))
+
+#Program to find number of weekdays in(mm/yyyy)
+import numpy as np
+# Number of weekdays in March 2017
+print("Number of weekdays in March 2017:",
+      np.busday_count('2017-03', '2017-04'))
+
+  
+# Number of sundays in Nov 2020
+print("Number of Sunday in november 2020:",
+      np.busday_count('2020-11', '2020-12',weekmask='Sun'))
+# input year and month
+yearMonth = '2017-05'
+  
+# getting date of first monday
+date = np.busday_offset(yearMonth, 0, roll='forward',weekmask='Mon')
+# display date
+print(date)
+
+mean:
+import numpy
+
+speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
+
+x = numpy.mean(speed)
+
+print(x)
+
+median:
+
+import numpy
+
+speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
+
+x = numpy.median(speed)
+
+print(x)
+
+SUM OF DIAGONAL ELEMNTS IN MATRIX :
+
+def sumofdigonal(mat,n):
+   principal=0
+   secondary=0
+   for i in range(0,n):
+       for j in range(0,n):
+           if(i==j):
+               principal+=mat[i][j]
+           if((i+j)==(n-1)):
+               secondary+=mat[i][j]
+
+   print("principal: ",principal)
+   print("  secondary : ",  secondary)
+
+mat=[[1,2,3,4],
+     [5,6,7,8],
+     [1,2,3,4],
+     [5,6,7,8]]
+print(sumofdigonal(mat,4))
+
+CONVERSION OF CELSIUS TO FARHENHEIT:
+
+celsiustemp = 45
+ 
+fahrenheittemp =celsiustemp*1.8+32
+ 
+print( fahrenheittemp)
+
+REVERSE A NUMBER:
+
+n=123
+rev=0
+while n>0:
+    rem=n%10
+    rev=rev*10+rem
+    n=n//10
+print("reverse",rev)
+
+REVERSE A STRING:
+
+str1="ram"
+str2=""
+for i in str1[::-1]:
+    str2+=i
+print(str2)
+9.REMOVE DUPLICATES:
+
+list1=[1,2,1,2,1]
+res=[]
+for i in list1:
+    if i not in res:
+        res.append(i)
+print(res)
+
+11.PERFECT NUMBER:
+
+num=int(input("entera number"))
+count=0
+sum=0
+
+for i in range(1,num):
+    if(num%i==0):
+        sum=sum+i
+
+if(num==sum):
+    print("perfect number")
+
+else:
+    print("not perfect number")
+12.COUNT WORDS IN STRING:
+
+str1= "   hello sv   wgfgv    world you      "
+count=0
+prev=" "
+for ch in str1:
+     if ch == " ":
+         if prev != " ":
+              print(prev,ch)
+              count=count+1
+     prev = ch
+
+if prev!=" ":
+    count += 1
+
+print(count)
+13.WORD SEPARATOR:
+
+sr=' hello world to my    world   '
+count=0
+insideword=0
+wordseparator=" \t\n,.?!"
+for char in sr:
+    if char in wordseparator:
+        if insideword:
+            count+=1
+            insideword=0
+    else:
+        insideword=1
+    
+if insideword:
+    count+=1
+
+print(count) 
+       
+14.VOWELS:
+
+sr="dfds; ruhughrh jIO9y4w 8 BCljuE8Y8GHAJjdjNWKNRJAGE e Oo U Uu sharma"
+vow=0
+for i in sr:
+    if i=="a" or i=="e" or i=="i" or i=="o" or i=="u" or i=="A" or i=="I" or i=="O" or i=="U":
+       vow+=1
+
+print(vow)
+
+19.PRIME NUMBER
+num=int(input("enter a number"))
+count=0
+for i in range(1,num+1):
+    if num%i==0:
+        count+=1
+
+if count==2:
+    print("prime number")
+else:
+    print("not a prime number")
+
+20.PALLINDROME:
+str1=str(input("enter a string"))
+str2=""
+for i in str1[::-1]:
+    str2+=i
+if str1==str2:
+    print("pallindrome")
+
+else:
+    print("not a pallindrome")
+
+
+21.LEAP YEAR:
+
+def leapyear(year):
+    if((year%400==0)or
+       (year%100!=0)and
+       (year%4==0)):
+        print("the given year is leap year")
+    else:
+         print("the given year is not leap year")
+year=int(input("enter a year"))
+leapyear(year)
+
+
+22.SUM OF N NATURAL NUMBERS:
+
+def sumof(n):
+    sum=0
+    for i in range(n):
+        sum=sum+i
+    return sum
+n=10
+print(sumof(n))
+
+
+23.SUM OF DIGITS:
+
+def sumof(n):
+    sum=0
+    while n>0:
+        rem=n%10
+        sum=sum+rem
+        n=n//10
+    return sum
+n=123
+print(sumof(n))
+
+right angle triangle :
+
+rows = int(input("Enter number of rows: "))
+for i in range(rows):
+    for j in range(i+1):
+        print("* ", end="")
+    print("\n")
+
+invert right angle triangle:
+
+rows = int(input("Enter number of rows: "))
+for i in range(rows, 0, -1):
+    for j in range(0, i):
+        print("* ", end=" ")
+     print("\n")
+
+full  pyramid:
+
+rows = int(input("Enter number of rows: "))
+
+k = 0
+
+for i in range(1, rows+1):
+    for space in range(1, (rows-i)+1):
+        print(end="  ")
+   while k!=(2*i-1):
+        print("* ", end="")
+        k += 1
+k = 0
+    print()
+invert pyramid:
+
+rows = int(input("Enter number of rows: "))
+for i in range(rows, 1, -1):
+    for space in range(0, rows-i):
+        print("  ", end="")
+    for j in range(i, 2*i-1):
+        print("* ", end="")
+    for j in range(1, i-1):
+        print("* ", end="")
+    print()
+
+pascal:
+
+rows = int(input("Enter number of rows: "))
+coef = 1
+
+for i in range(1, rows+1):
+    for space in range(1, rows-i+1):
+        print(" ",end="")
+    for j in range(0, i):
+        if j==0 or i==0:
+            coef = 1
+        else:
+            coef = coef * (i - j)//j
+        print(coef, end = " ")
+    print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
